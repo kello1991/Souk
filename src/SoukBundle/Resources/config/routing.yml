@@ -1,0 +1,9 @@
+souk_homepage:
+    path:     /
+    defaults: { _controller: SoukBundle:Default:index }
+souk_products:
+    path:     /products
+    defaults: { _controller: SoukBundle:Product:index}
+souk_back:
+    path:     /back
+    defaults: { _controller: SoukBundle:Default:indexBack}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+
+<!-- Mirrored from pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 23 Mar 2018 13:03:34 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>{% block title %}Souk{% endblock %}</title>
+    {% block stylesheets %}
+    {% endblock %}
+</head>
+<body class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar"
+      data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
+<!-- fixed-top-->
+{% include '@Souk/Component/header.html.twig' %}
+{% include '@Souk/Component/menu.html.twig' %}
+
+{% block body %}
+{% endblock %}
+
+{% include'@Souk/Component/footer.html.twig' %}
+
+{% block javascripts %}
+{% endblock %}
+</body>
+
+<!-- Mirrored from pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 23 Mar 2018 13:05:30 GMT -->
+</html>

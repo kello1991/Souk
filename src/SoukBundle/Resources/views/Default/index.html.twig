@@ -1,0 +1,63 @@
+{% extends '@Souk/layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="apple-touch-icon" href="{{ asset('back/app-assets/images/ico/apple-icon-120.png') }}">
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/app-assets/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
+          rel="stylesheet">
+    <!-- BEGIN VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/vendors.min.css') }}">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN MODERN CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/css/app.min.css') }}">
+    <!-- END MODERN CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css"
+          href="{{ asset('back/app-assets/css/core/menu/menu-types/vertical-menu-modern.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ asset('back/app-assets/css/core/colors/palette-gradient.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ asset('back/app-assets/vendors/css/charts/jquery-jvectormap-2.0.3.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/vendors/css/charts/morris.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/app-assets/fonts/simple-line-icons/style.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ asset('back/app-assets/css/core/colors/palette-gradient.min.css') }}">
+    <!-- END Page Level CSS-->
+    <!-- BEGIN Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('back/assets/css/style.css') }}">
+    <!-- END Custom CSS-->
+{% endblock %}
+
+{% block body %}
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <!-- BEGIN VENDOR JS-->
+    <script src="{{ asset('back/app-assets/vendors/js/vendors.min.js') }}" type="text/javascript"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="{{ asset('back/app-assets/vendors/js/charts/chart.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('back/app-assets/vendors/js/charts/raphael-min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('back/app-assets/vendors/js/charts/morris.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('back/app-assets/vendors/js/charts/jvector/jquery-jvectormap-2.0.3.min.js') }}"
+            type="text/javascript"></script>
+    <script src="{{ asset('back/app-assets/vendors/js/charts/jvector/jquery-jvectormap-world-mill.js') }}"
+            type="text/javascript"></script>
+    <script src="{{ asset('back/app-assets/data/jvector/visitor-data.js') }}" type="text/javascript"></script>
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN MODERN JS-->
+    <script src="{{ asset('back/app-assets/js/core/app-menu.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('back/app-assets/js/core/app.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('back/app-assets/js/scripts/customizer.min.js') }}" type="text/javascript"></script>
+    <!-- END MODERN JS-->
+{% endblock %}
