@@ -3,8 +3,29 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    <div class="col-lg-12 col-md-12 center-layout">
+        <div class="card text-center">
+            <div class="card-content">
+                <div class="card-body">
+                    <h4 class="card-title success">Votre compte a été créé avec succès</h4>
+                    <p class="card-text">
+                        {{ 'registration.confirmed'|trans({'%username%': user.username}) }}
+                    </p>
+                    <a href="{{ path('souk_homepage') }}" class="btn btn-outline-success">Accueil</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ asset('front/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+    <script>
+        $(function () {
+            console.log('redirection');
+            clearInterval(50);
+            window.location = '/';
+        })
+    </script>
     {% if targetUrl %}
     <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+
     {% endif %}
 {% endblock fos_user_content %}
