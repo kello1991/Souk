@@ -40,6 +40,7 @@ class User extends BaseUser
      */
     protected $name;
 
+
     /**
      * @return mixed
      */
@@ -61,5 +62,6 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+        $this->setRoles(['ROLE_USER']);
     }
 }
