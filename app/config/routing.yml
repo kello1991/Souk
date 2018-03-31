@@ -1,3 +1,11 @@
+souk_categorie:
+    resource: "@SoukBundle/Controller/CategorieController.php"
+    type:     annotation
+
+souk_article:
+    resource: "@SoukBundle/Controller/ArticleController.php"
+    type:     annotation
+
 souk:
     resource: "@SoukBundle/Resources/config/routing.yml"
     prefix:   /
