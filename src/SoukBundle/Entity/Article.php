@@ -2,6 +2,7 @@
 
 namespace SoukBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\DateTime;
 
@@ -61,6 +62,15 @@ class Article
      * @ORM\Column(name="image", type="string",nullable=true,length=255)
      */
     private $image;
+
+
+
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="SoukBundle\Entity\Ligne", mappedBy="article")
+     */
+    protected $lignes;
+
 
     /**
      * @ORM\PrePersist
@@ -176,7 +186,46 @@ class Article
         $this->image = $image;
     }
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->lignes = new ArrayCollection();
+    }
 
+    /**
+     * Add lignes
+     *
+     * @param Ligne $ligne
+     * @return Article
+     */
+    public function addUserRecipeAssociation(Ligne $ligne)
+    {
+        $this->lignes[] = $ligne;
+
+        return $this;
+    }
+
+    /**
+     * Remove lignes
+     *
+     * @param Ligne $ligne
+     */
+    public function removeUserRecipeAssociation(Ligne $ligne)
+    {
+        $this->lignes->removeElement($ligne);
+    }
+
+    /**
+     * Get ligne
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUserRecipeAssociations()
+    {
+        return $this->lignes;
+    }
 
 
 }
