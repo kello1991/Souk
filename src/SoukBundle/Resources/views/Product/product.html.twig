@@ -261,7 +261,6 @@
             $(this).on('click', function () {
                 swal(nameProduct, "is added to cart !", "success");
 
-
                 $.ajax({
                     url:'/panier/add',
                     type: "POST",
@@ -275,7 +274,30 @@
                     async: true,
                     success: function (data)
                     {
-                        console.log(data)
+
+                        console.log(data.lignes)
+                        var d='';
+                        data.lignes.forEach(function (a) {
+                            d+=" <li class=\"header-cart-item\">\n" +
+                                "                                <div class=\"header-cart-item-img\">\n" +
+                                "                                    <img src=\""+"/uploads/images/"+a.article.image+"\" alt=\"IMG\">\n" +
+                                "                                </div>\n" +
+                                "\n" +
+                                "                                <div class=\"header-cart-item-txt\">\n" +
+                                "                                    <a href=\"#\" class=\"header-cart-item-name\">\n" +
+                                "                                        "+a.article.nom+"\n" +
+                                "                                    </a>\n" +
+                                "\n" +
+                                "                                    <span class=\"header-cart-item-info\">\n"
+                                +
+                                    a.article.prix
+                                +
+                                "\t\t\t\t\t\t\t\t\t\t</span>\n" +
+                                "                                </div>\n" +
+                                "                            </li>";
+                        } )
+                        $('#panier').html(d);
+                        $('#paniernumber').html(data.lignes.length);
                        // $('div#ajax-results').html(data.output);
 
                     }
@@ -320,7 +342,6 @@
         //     skipValues[handle].innerHTML = Math.round(values[handle]) ;
         // });
     </script>
-
     <!--===============================================================================================-->
     <script src="{{ asset('front/js/main.js') }}"></script>
 {% endblock %}

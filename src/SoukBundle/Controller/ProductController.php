@@ -35,8 +35,10 @@ class ProductController extends Controller
             $panier->addUserRecipeAssociation($ligne);
             $em->persist($panier);
             $em->flush();
+            $r='';
+
             $serializedEntity = $this->container->get('jms_serializer')->serialize($panier, 'json');
-            return new Response($serializedEntity);
+            return new Response(array('panier'=>$serializedEntity,'output'=>$r));
         }else{
 
             $panier= new Panier();
@@ -60,4 +62,6 @@ class ProductController extends Controller
         }
 
     }
+
+
 }
