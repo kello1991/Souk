@@ -3,6 +3,7 @@
 namespace SoukBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,7 +14,7 @@ class ArticleType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('description')->add('prix')->add('date_pub')->add('image')->add('categorie');
+        $builder->add('nom')->add('description')->add('prix')->add('date_pub',DateType::class)->add('imageFile')->add('categorie');
     }/**
      * {@inheritdoc}
      */

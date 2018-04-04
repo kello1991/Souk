@@ -15,6 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="article")
  * @ORM\Entity(repositoryClass="SoukBundle\Repository\ArticleRepository")
  * @ORM\HasLifecycleCallbacks
+ * @Vich\Uploadable
  */
 class Article
 {
@@ -45,7 +46,7 @@ class Article
 
     /**
      * @var string
-     * @ORM\Column(name="description", type="string",nullable=true,length=255)
+     * @ORM\Column(name="description", type="string",nullable=true,length=255,unique=true)
      */
     private $description;
     /**
@@ -84,7 +85,7 @@ class Article
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="SoukBundle\Entity\Ligne", mappedBy="article")
+     * @ORM\OneToMany(targetEntity="SoukBundle\Entity\Ligne", mappedBy="article",cascade={"persist"})
      */
     protected $lignes;
 

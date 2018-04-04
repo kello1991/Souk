@@ -23,7 +23,7 @@ class Ligne
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="SoukBundle\Entity\Panier", inversedBy="lignes")
+     * @ORM\ManyToOne(targetEntity="SoukBundle\Entity\Panier", inversedBy="lignes",cascade={"persist"})
      * @ORM\JoinColumn(name="panier", referencedColumnName="id")
      *
      */
@@ -31,7 +31,7 @@ class Ligne
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="SoukBundle\Entity\Article", inversedBy="lignes")
+     * @ORM\ManyToOne(targetEntity="SoukBundle\Entity\Article", inversedBy="lignes",cascade={"persist"})
      * @ORM\JoinColumn(name="article", referencedColumnName="id")
      */
     private $article;
@@ -106,6 +106,7 @@ class Ligne
     {
         $this->quantite = $quantite;
     }
+
 
 
 }

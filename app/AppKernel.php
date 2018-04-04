@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
             new SoukBundle\SoukBundle(),
         ];
 

@@ -7,3 +7,7 @@ souk_products:
 souk_back:
     path:     /back
     defaults: { _controller: SoukBundle:Default:indexBack}
+
+souk_add_to_panier:
+    path:     /panier/add
+    defaults: { _controller: SoukBundle:Product:addToPanier}

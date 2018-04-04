@@ -53,7 +53,7 @@ class Panier
 
 
     /**
-     * @ORM\OneToMany(targetEntity="SoukBundle\Entity\Ligne", mappedBy="panier")
+     * @ORM\OneToMany(targetEntity="SoukBundle\Entity\Ligne", mappedBy="panier",cascade={"persist"})
      */
     private $lignes;
 

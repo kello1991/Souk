@@ -138,5 +138,11 @@ class Categorie
         $this->image = $image;
     }
 
+    public function __toString()
+    {
+       return $this->getNom();
+    }
+
+
 }
 

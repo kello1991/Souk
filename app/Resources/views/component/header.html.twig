@@ -101,40 +101,9 @@
                     <span class="header-icons-noti">0</span>
 
                     <!-- Header cart noti -->
-                    <div class="header-cart header-dropdown">
+                    <div class="header-cart header-dropdown" id="panier">
                         <ul class="header-cart-wrapitem">
-                            <li class="header-cart-item">
-                                <div class="header-cart-item-img">
-                                    <img src="{{ asset('front/images/item-cart-01.jpg') }}" alt="IMG">
-                                </div>
-
-                                <div class="header-cart-item-txt">
-                                    <a href="#" class="header-cart-item-name">
-                                        White Shirt With Pleat Detail Back
-                                    </a>
-
-                                    <span class="header-cart-item-info">
-											1 x $19.00
-										</span>
-                                </div>
-                            </li>
-
-                            <li class="header-cart-item">
-                                <div class="header-cart-item-img">
-                                    <img src="{{ asset('front/images/item-cart-02.jpg') }}" alt="IMG">
-                                </div>
-
-                                <div class="header-cart-item-txt">
-                                    <a href="#" class="header-cart-item-name">
-                                        Converse All Star Hi Black Canvas
-                                    </a>
-
-                                    <span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-                                </div>
-                            </li>
-
+                           {% if panier is defined %}
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
                                     <img src="{{ asset('front/images/item-cart-03.jpg') }}" alt="IMG">
@@ -150,6 +119,10 @@
 										</span>
                                 </div>
                             </li>
+                            {% else %}
+                                <p> Votre panier est vide. Consulter nos article
+                               <a href="{{ url('souk_products') }}">Liste des articles</a></p>
+                            {% endif %}
                         </ul>
 
                         <div class="header-cart-total">
